@@ -40,7 +40,7 @@ function AddProduct({ addProduct }) {
   };
 
   return (
-    <div>
+    <div className={classes.parentContainer}>
       <Button className={classes.ProductButton} onClick={handleOpen}>Add Item</Button>
       <Modal
         open={open}
@@ -52,7 +52,7 @@ function AddProduct({ addProduct }) {
         <Box className={classes.Model} component="form" onSubmit={handleSubmit}>
           <div className={classes.ModelHeading}>
             <Typography id="modal-modal-title" variant="h6" component="h2" gutterBottom>
-              Product Form
+              Create Product
             </Typography>
             <span className={classes.crossicon} onClick={handleClose}><RxCross2 /></span>
           </div>

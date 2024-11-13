@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 // import { UseStyles } from './MaterialCss';
 
 
-function EditProduct({ open, onClose, product,updateProduct }) {
+function EditProduct({ open, onClose, product,updateProduct,selectedProduct }) {
   const [formData, setFormData] = useState({
     productName: '',
     productPrice: '',
@@ -29,12 +29,17 @@ function EditProduct({ open, onClose, product,updateProduct }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Updated product:", formData);
-    updateProduct(formData);
+    const updatedData = {
+      productName: formData.productName,
+      productPrice: formData.productPrice,
+      productDescription: formData.productDescription,
+    };
+    await updateProduct(product.id, updatedData); // Use product.id here
     onClose(); 
   };
+  
 
   return (
     <Modal

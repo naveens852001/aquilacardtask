@@ -1,36 +1,25 @@
 body {
   padding: 0;
   margin: 0;
-  height:100cap; 
+  min-height: 100vh; /* Ensures body covers the full viewport */
   width: 100vw;
   overflow-x: hidden;
-  /* background-image: linear-gradient(to right top, #051937, #031534, #031031, #03092d, #03012a); */
- /* min-width: 800px; */
-
+  position: relative;
 }
-
-
 
 body::before {
   content: '';
-
-  position: absolute;
+  position: fixed; /* Cover entire viewport */
   top: 0;
   left: 0;
-  height: 100cap;
+  height: 100%; /* Cover full height */
   width: 100%;
-   background-color: rgba(0, 0, 0, 0.5);
-  background-image: 
-    radial-gradient(at 55% 53%, rgb(20, 184, 166) 0%, transparent 50%),
-    radial-gradient(at 61% 77%, rgb(7, 89, 133) 0%, transparent 93%),
-    radial-gradient(at 20% 1%, rgb(5, 150, 105) 0%, transparent 48%),
-    radial-gradient(at 4% 40%, rgb(120, 53, 15) 0%, transparent 92%),
-    radial-gradient(at 49% 8%, rgb(71, 85, 105) 0%, transparent 6%),
-    radial-gradient(at 12% 52%, rgb(147, 51, 234) 0%, transparent 42%);
-  background-size: 100% 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to right top, #092146, #271b3b, #31182f, #341724, #31191c);
+  background-size: cover;
   background-repeat: no-repeat;
   --_mesh-gradient-blur: 0px;
-  filter: blur(var(--_mesh-gradient-blur)); 
-   z-index: -1; 
-   
-} 
+  filter: blur(var(--_mesh-gradient-blur));
+  z-index: -1;
+}
+  
